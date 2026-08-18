@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RaceRouteImport } from './routes/race'
 import { Route as CircuitsIndexRouteImport } from './routes/circuits.index'
+import { Route as CircuitsSlugRouteImport } from './routes/circuits.$slug'
 import { Route as TeamsIndexRouteImport } from './routes/teams.index'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const CircuitsIndexRoute = CircuitsIndexRouteImport.update({
   path: '/circuits/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CircuitsSlugRoute = CircuitsSlugRouteImport.update({
+  id: '/circuits/$slug',
+  path: '/circuits/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamsIndexRoute = TeamsIndexRouteImport.update({
   id: '/teams/',
   path: '/teams/',
@@ -38,12 +44,14 @@ const TeamsIndexRoute = TeamsIndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/race': typeof RaceRoute
+  '/circuits/$slug': typeof CircuitsSlugRoute
   '/circuits/': typeof CircuitsIndexRoute
   '/teams/': typeof TeamsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/race': typeof RaceRoute
+  '/circuits/$slug': typeof CircuitsSlugRoute
   '/circuits': typeof CircuitsIndexRoute
   '/teams': typeof TeamsIndexRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/race': typeof RaceRoute
+  '/circuits/$slug': typeof CircuitsSlugRoute
   '/circuits/': typeof CircuitsIndexRoute
   '/teams/': typeof TeamsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/race' | '/circuits/' | '/teams/'
+  fullPaths: '/' | '/race' | '/circuits/$slug' | '/circuits/' | '/teams/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/race' | '/circuits' | '/teams'
-  id: '__root__' | '/' | '/race' | '/circuits/' | '/teams/'
+  to: '/' | '/race' | '/circuits/$slug' | '/circuits' | '/teams'
+  id: '__root__' | '/' | '/race' | '/circuits/$slug' | '/circuits/' | '/teams/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   RaceRoute: typeof RaceRoute
+  CircuitsSlugRoute: typeof CircuitsSlugRoute
   CircuitsIndexRoute: typeof CircuitsIndexRoute
   TeamsIndexRoute: typeof TeamsIndexRoute
 }
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CircuitsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/circuits/$slug': {
+      id: '/circuits/$slug'
+      path: '/circuits/$slug'
+      fullPath: '/circuits/$slug'
+      preLoaderRoute: typeof CircuitsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/teams/': {
       id: '/teams/'
       path: '/teams'
@@ -105,6 +122,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   RaceRoute: RaceRoute,
+  CircuitsSlugRoute: CircuitsSlugRoute,
   CircuitsIndexRoute: CircuitsIndexRoute,
   TeamsIndexRoute: TeamsIndexRoute,
 }
