@@ -1,6 +1,7 @@
 export type Tier = "front" | "midfield" | "new";
 
 export type Team = {
+  slug: string;
   name: string;
   country: string;
   drivers: [string, string];
@@ -12,6 +13,7 @@ export type Team = {
 
 export const TEAMS: Team[] = [
   {
+    slug: "mercedes",
     name: "Mercedes",
     country: "Germany",
     drivers: ["George Russell", "Kimi Antonelli"],
@@ -22,6 +24,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.78 0.12 180)",
   },
   {
+    slug: "ferrari",
     name: "Ferrari",
     country: "Italy",
     drivers: ["Charles Leclerc", "Lewis Hamilton"],
@@ -32,6 +35,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.6 0.22 27)",
   },
   {
+    slug: "mclaren",
     name: "McLaren",
     country: "United Kingdom",
     drivers: ["Lando Norris", "Oscar Piastri"],
@@ -42,6 +46,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.76 0.16 62)",
   },
   {
+    slug: "red-bull-racing",
     name: "Red Bull Racing",
     country: "Austria",
     drivers: ["Max Verstappen", "Isack Hadjar"],
@@ -52,6 +57,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.55 0.19 265)",
   },
   {
+    slug: "racing-bulls",
     name: "Racing Bulls",
     country: "Italy",
     drivers: ["Liam Lawson", "Arvid Lindblad"],
@@ -62,6 +68,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.68 0.15 250)",
   },
   {
+    slug: "alpine",
     name: "Alpine",
     country: "France",
     drivers: ["Pierre Gasly", "Franco Colapinto"],
@@ -72,6 +79,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.7 0.14 235)",
   },
   {
+    slug: "haas",
     name: "Haas F1 Team",
     country: "United States",
     drivers: ["Esteban Ocon", "Oliver Bearman"],
@@ -82,6 +90,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.8 0.02 285)",
   },
   {
+    slug: "audi",
     name: "Audi",
     country: "Germany",
     drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"],
@@ -92,6 +101,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.7 0.05 150)",
   },
   {
+    slug: "williams",
     name: "Williams",
     country: "United Kingdom",
     drivers: ["Carlos Sainz", "Alexander Albon"],
@@ -102,6 +112,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.72 0.14 245)",
   },
   {
+    slug: "aston-martin",
     name: "Aston Martin",
     country: "United Kingdom",
     drivers: ["Fernando Alonso", "Lance Stroll"],
@@ -112,6 +123,7 @@ export const TEAMS: Team[] = [
     accent: "oklch(0.62 0.12 168)",
   },
   {
+    slug: "cadillac",
     name: "Cadillac",
     country: "United States",
     drivers: ["Sergio Perez", "Valtteri Bottas"],
