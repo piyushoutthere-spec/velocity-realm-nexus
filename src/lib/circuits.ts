@@ -327,7 +327,7 @@ export const CIRCUITS: Circuit[] = [
     capital: "Madrid",
     region: "europe",
     traits: ["street", "technical"],
-    special":
+    special:
       "A new mixed street and permanent layout around the IFEMA exhibition district, joining the calendar for 2026.",
     character: ["Street sections", "Banked corner", "Mixed permanent and temporary layout"],
     facts: [
@@ -365,7 +365,7 @@ export const CIRCUITS: Circuit[] = [
     capital: "Singapore",
     region: "asia",
     traits: ["street", "high-downforce", "technical"],
-    special":
+    special:
       "F1's original night race, a humid and physically brutal street event where concentration lapses end races.",
     character: ["Street layout", "Tight corners", "Extreme heat and humidity"],
     facts: [
@@ -441,7 +441,7 @@ export const CIRCUITS: Circuit[] = [
     capital: "Washington, D.C.",
     region: "americas",
     traits: ["street", "high-speed"],
-    special":
+    special:
       "A late-night run down the Strip with very long straights and cold track temperatures that challenge tyre warm-up.",
     character: ["Long straights", "Street layout", "Cold night conditions"],
     facts: [
