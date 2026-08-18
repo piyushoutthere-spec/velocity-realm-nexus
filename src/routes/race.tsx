@@ -154,8 +154,8 @@ function RacePage() {
   const [strategy, setStrategy] = useState("one");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const activeSession = SESSIONS.find((s) => s.id === session) ?? SESSIONS[0];
-  const activeStrategy = STRATEGIES.find((s) => s.id === strategy) ?? STRATEGIES[0];
+  const activeSession = SESSIONS.find((s) => s.id === session) ?? SESSIONS[0]!;
+  const activeStrategy = STRATEGIES.find((s) => s.id === strategy) ?? STRATEGIES[0]!;
 
   return (
     <div>
