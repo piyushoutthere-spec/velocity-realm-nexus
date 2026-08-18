@@ -5,7 +5,7 @@ import { MapPin, ArrowUpRight } from "lucide-react";
 import { CIRCUITS, REGION_LABEL, TRAIT_LABEL, type Region, type Trait } from "../lib/circuits";
 import { CircuitGlyph } from "../components/CircuitGlyph";
 
-export const Route = createFileRoute("/circuits")({
+export const Route = createFileRoute("/circuits/")({
   head: () => ({
     meta: [
       { title: "Circuits — APEX | The 2026 Formula 1 Calendar" },

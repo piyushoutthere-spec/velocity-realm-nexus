@@ -4,7 +4,7 @@ import { MapPin } from "lucide-react";
 
 import { TEAMS, TIER_LABEL, type Tier } from "../lib/f1-data";
 
-export const Route = createFileRoute("/teams")({
+export const Route = createFileRoute("/teams/")({
   head: () => ({
     meta: [
       { title: "Teams — APEX | 2026 Formula 1 Grid" },
