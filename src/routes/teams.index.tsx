@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { MapPin } from "lucide-react";
 
@@ -77,9 +77,11 @@ function TeamsPage() {
       <section className="mx-auto mt-12 max-w-7xl px-5 sm:px-8">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {teams.map((team, i) => (
-            <article
+            <Link
               key={team.name}
-              className="glass group animate-rise relative overflow-hidden rounded-sm p-6 transition-all duration-300 hover:-translate-y-2"
+              to="/teams/$slug"
+              params={{ slug: team.slug }}
+              className="glass group animate-rise relative block overflow-hidden rounded-sm p-6 transition-all duration-300 hover:-translate-y-2"
               style={{ animationDelay: `${i * 45}ms`, boxShadow: "var(--shadow-lift)" }}
             >
               <span
@@ -92,7 +94,7 @@ function TeamsPage() {
               />
               <div className="relative">
                 <div className="flex items-start justify-between gap-3">
-                  <h2 className="font-display text-3xl leading-none tracking-wide">{team.name}</h2>
+                  <h2 className="font-display text-3xl leading-none tracking-wide transition-colors group-hover:text-primary">{team.name}</h2>
                   <span
                     className="mt-1 shrink-0 rounded-full border px-2.5 py-1 font-mono text-[10px] tracking-[0.18em] uppercase"
                     style={{ borderColor: team.accent, color: team.accent }}
@@ -125,7 +127,7 @@ function TeamsPage() {
                   </p>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
